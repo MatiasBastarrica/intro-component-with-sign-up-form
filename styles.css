@@ -51,3 +51,14 @@ textarea,
 select {
   font: inherit;
 }
+
+/* ### UTILITIES ### */
+
+.text-bold {
+  font-weight: var(--fw-700);
+}
+
+.text-accent {
+  color: var(--red-400);
+  font-weight: var(--fw-700);
+}
