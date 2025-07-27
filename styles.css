@@ -72,3 +72,39 @@ body {
   background-image: url(./images/bg-intro-mobile.png);
   background-repeat: no-repeat;
 }
+
+main {
+  padding-inline: 1.5rem;
+}
+
+/* ### INTRO COMPONENT ### */
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "intro-section"
+    "form-section";
+}
+
+/* ## INTRO SECTION ## */
+
+.intro-section {
+  grid-area: intro-section;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  line-height: 1.1;
+  font-size: 1.6rem;
+  max-width: 15ch;
+  margin-inline: auto;
+}
+
+.intro-section p {
+  margin-top: 1.45rem;
+  font-weight: var(--fw-500);
+  max-width: 45ch;
+  margin-inline: auto;
+  font-size: 0.945rem;
+}
