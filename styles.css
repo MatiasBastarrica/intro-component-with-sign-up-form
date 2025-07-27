@@ -11,4 +11,11 @@
   /* # NEUTRAL # */
   --gray-900: hsl(249, 10%, 26%);
   --purple-350: hsl(246, 25%, 77%);
+
+  /* # TYPOGRAPHY # */
+  --ff-poppins: "Poppins", sans-serif;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
 }
