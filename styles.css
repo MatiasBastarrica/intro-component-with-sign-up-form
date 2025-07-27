@@ -74,7 +74,7 @@ body {
 }
 
 main {
-  padding-inline: 1.5rem;
+  padding-inline: 1.7rem;
 }
 
 /* ### INTRO COMPONENT ### */
@@ -97,7 +97,7 @@ main {
 
 h1 {
   line-height: 1.1;
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 1.2787rem + 1.3709vw, 2.5125rem);
   max-width: 15ch;
   margin-inline: auto;
 }
@@ -107,7 +107,7 @@ h1 {
   font-weight: var(--fw-500);
   max-width: 45ch;
   margin-inline: auto;
-  font-size: 0.985rem;
+  font-size: 0.815rem;
 }
 
 /* ## FORM SECTION ## */
@@ -129,6 +129,11 @@ h1 {
 .offer-description p {
   max-width: 20ch;
   margin-inline: auto;
+  color: var(--purple-350);
+}
+
+.offer-description span {
+  color: #fff;
 }
 
 form {
@@ -146,6 +151,8 @@ form input {
   border-radius: 0.2rem;
   padding: 0.9rem 0.8rem;
   font-size: 0.85rem;
+  width: 100%;
+  font-weight: var(--fw-600);
 }
 
 form input::placeholder {
@@ -174,4 +181,53 @@ form button {
   line-height: 1.8;
   max-width: 35ch;
   margin-inline: auto;
+}
+
+/* ### MEDIA QUERIES ### */
+
+@media (min-width: 23.438em) {
+  body {
+    background-image: url(./images/bg-intro-desktop.png);
+    background-size: cover;
+  }
+}
+
+@media (min-width: 35em) {
+  .grid {
+    min-height: 100vh;
+    max-width: 1170px;
+    margin-inline: auto;
+    grid-template-areas: "intro-section form-section";
+    align-content: center;
+  }
+
+  .intro-section {
+    padding-block: 0;
+    display: grid;
+    align-content: center;
+    text-align: start;
+  }
+
+  h1 {
+    margin-inline: unset;
+  }
+
+  .intro-section p {
+    max-width: 50ch;
+    margin-inline: unset;
+    font-size: 1rem;
+    margin-top: 1.6rem;
+  }
+
+  .offer-description p {
+    max-width: unset;
+  }
+
+  form {
+    padding: 2rem 2rem 2.6rem;
+  }
+
+  .terms-warning {
+    max-width: unset;
+  }
 }
