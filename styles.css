@@ -62,3 +62,13 @@ select {
   color: var(--red-400);
   font-weight: var(--fw-700);
 }
+
+/* ### GENERAL STYLING ### */
+
+body {
+  font-family: var(--ff-poppins);
+  /* min-height: 100vh; */
+  background-color: var(--red-400);
+  background-image: url(./images/bg-intro-mobile.png);
+  background-repeat: no-repeat;
+}
