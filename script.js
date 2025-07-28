@@ -1,13 +1,6 @@
 const form = document.querySelector("form");
 const inputsContainer = document.querySelectorAll(".input-container");
 
-function displayErrorMessage(message, inputContainer) {
-  const paragraph = document.createElement("p");
-  paragraph.classList.add("error-message");
-  paragraph.textContent = message;
-  inputContainer.appendChild(paragraph);
-}
-
 function displayErrorIcon(inputContainer) {
   const errorIconContainer = document.createElement("div");
   errorIconContainer.classList.add("error-icon-container");
