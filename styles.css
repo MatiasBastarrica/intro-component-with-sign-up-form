@@ -68,7 +68,7 @@ select {
 }
 
 .error-message {
-  color: red;
+  color: var(--red-400);
   font-style: italic;
   text-align: end;
   font-size: 0.8rem;
@@ -174,8 +174,8 @@ form input {
 }
 
 form input:invalid {
-  border-color: red;
-  color: red;
+  border-color: var(--red-400);
+  color: var(--red-400);
 }
 
 form input::placeholder {
