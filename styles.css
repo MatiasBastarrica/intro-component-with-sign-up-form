@@ -175,6 +175,7 @@ form input {
 
 form input:invalid {
   border-color: red;
+  color: red;
 }
 
 form input::placeholder {
