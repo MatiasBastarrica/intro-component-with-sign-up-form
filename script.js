@@ -39,6 +39,7 @@ form.addEventListener("submit", (e) => {
       }
     } else {
       errorMessage.classList.add("hide");
+      input.style.borderColor = "rgb(228, 226, 226)";
       if (inputContainer.childElementCount === 3) {
         inputContainer.removeChild(lastChild);
       }
