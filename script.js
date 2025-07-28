@@ -10,8 +10,8 @@ function displayErrorMessage(message, inputContainer) {
 
 function displayErrorIcon(inputContainer) {
   const errorIconContainer = document.createElement("div");
-  errorIconContainer.classList.add("erro-icon-container");
-  const errorIcon = document.createElement(img);
+  errorIconContainer.classList.add("error-icon-container");
+  const errorIcon = document.createElement("img");
   errorIcon.setAttribute("src", "./images/icon-error.svg");
   errorIconContainer.appendChild(errorIcon);
   inputContainer.appendChild(errorIconContainer);
@@ -21,34 +21,57 @@ function getFieldName(input) {
   return input.getAttribute("placeholder");
 }
 
-inputsContainer.forEach((inputContainer) => {
-  const input = inputContainer.querySelector("input");
-  input.addEventListener("invalid", (e) => {
-    e.preventDefault();
-    if (inputContainer.childElementCount === 2) {
-      const lastChild = inputContainer.lastElementChild;
-      inputContainer.removeChild(lastChild);
-    }
-    const fieldName = getFieldName(input);
-    const message = `Looks like this is not a valid ${fieldName.toLowerCase()}`;
-    displayErrorMessage(message, inputContainer);
-    input.style.borderColor = "red";
-  });
-});
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   inputsContainer.forEach((inputContainer) => {
     const input = inputContainer.querySelector("input");
-    if (inputContainer.childElementCount === 2) {
-      const lastChild = inputContainer.lastElementChild;
-      inputContainer.removeChild(lastChild);
-    }
-    if (input.value === "" && inputContainer.childElementCount === 1) {
-      const fieldName = getFieldName(input);
-      const message = `${fieldName} cannot be empty`;
-      displayErrorMessage(message, inputContainer);
+    const errorMessage = inputContainer.querySelector(".error-message");
+    const fieldName = getFieldName(input);
+    const message = `${fieldName} cannot be empty`;
+
+    if (input.value === "") {
+      errorMessage.textContent = message;
       input.style.borderColor = "red";
+      errorMessage.classList.remove("hide");
+      if (inputContainer.childElementCount == 2) {
+        displayErrorIcon(inputContainer);
+      }
+    } else {
+      form.submit();
     }
   });
 });
+
+// inputsContainer.forEach((inputContainer) => {
+//   const input = inputContainer.querySelector("input");
+//   input.addEventListener("invalid", (e) => {
+//     e.preventDefault();
+//     displayErrorIcon(inputContainer);
+//     if (inputContainer.childElementCount === 3) {
+//       const lastChild = inputContainer.lastElementChild;
+//       inputContainer.removeChild(lastChild);
+//     }
+//     const fieldName = getFieldName(input);
+//     const message = `Looks like this is not a valid ${fieldName.toLowerCase()}`;
+//     displayErrorMessage(message, inputContainer);
+//     input.style.borderColor = "red";
+//   });
+// });
+
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   inputsContainer.forEach((inputContainer) => {
+//     const input = inputContainer.querySelector("input");
+//     if (inputContainer.childElementCount === 3) {
+//       const lastChild = inputContainer.lastElementChild;
+//       inputContainer.removeChild(lastChild);
+//     }
+//     if (input.value === "" && inputContainer.childElementCount === 2) {
+//       displayErrorIcon(inputContainer);
+//       const fieldName = getFieldName(input);
+//       const message = `${fieldName} cannot be empty`;
+//       displayErrorMessage(message, inputContainer);
+//       input.style.borderColor = "red";
+//     }
+//   });
+// });

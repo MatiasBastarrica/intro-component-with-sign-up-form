@@ -63,6 +63,10 @@ select {
   font-weight: var(--fw-700);
 }
 
+.hide {
+  display: none;
+}
+
 .error-message {
   color: red;
   font-style: italic;
@@ -73,8 +77,8 @@ select {
 
 .error-icon-container {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 13.585px;
+  right: 1.5rem;
 }
 
 /* ### GENERAL STYLING ### */
